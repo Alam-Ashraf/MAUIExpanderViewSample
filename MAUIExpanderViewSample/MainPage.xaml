@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MAUIExpanderViewSample.MainPage">
+
+    <ScrollView Padding="10"
+                VerticalScrollBarVisibility="Always"
+                VerticalOptions="FillAndExpand">
+        <StackLayout
+            Spacing="25"
+            Padding="10,0"
+            VerticalOptions="Start">
+
+            <!--Expander in Down Direction-->
+            <Border Stroke="#2B0B98"
+                    StrokeThickness="4"
+                    StrokeShape="RoundRectangle 40,0,0,40"
+                    Background="#fff"
+                    Padding="16,8"
+                    HorizontalOptions="FillAndExpand">
+
+                <toolkit:Expander Direction="Down">
+                    <toolkit:Expander.Header>
+                          <Button Text="Expand in Down Direction !!"  HorizontalOptions="CenterAndExpand"/>
+                    </toolkit:Expander.Header>
+
+                    <toolkit:Expander.Content>
+                        <VerticalStackLayout Spacing="20" Padding="10">
+                            <Image
+                                Source="dotnet_bot.png"
+                                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                                HeightRequest="200"
+                                HorizontalOptions="Center" />
+
+                            <Label
+                                Text="Hello, World!"
+                                SemanticProperties.HeadingLevel="Level1"
+                                FontSize="32"
+                                HorizontalOptions="Center" />
+
+                            <Label
+                                Text="Welcome to .NET Multi-platform App UI"
+                                SemanticProperties.HeadingLevel="Level2"
+                                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                                FontSize="18"
+                                HorizontalOptions="Center" />
+
+                            <Button
+                            x:Name="CounterBtn"
+                            Text="Click me"
+                            SemanticProperties.Hint="Counts the number of times you click"
+                            Clicked="OnCounterClicked"
+                            HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </toolkit:Expander.Content>
+
+               </toolkit:Expander>
+            </Border>
+
+            <!--Expander in Up Direction-->
+            <Border Stroke="#2B0B98"
+                    StrokeThickness="4"
+                    StrokeShape="RoundRectangle 40,0,0,40"
+                    Background="#fff"
+                    Padding="16,8"
+                    HorizontalOptions="FillAndExpand">
+
+                <toolkit:Expander Direction="Up">
+                    <toolkit:Expander.Header>
+                          <Button Text="Expand in Up Direction !!" HorizontalOptions="CenterAndExpand"/>
+                    </toolkit:Expander.Header>
+
+                    <toolkit:Expander.Content>
+                        <VerticalStackLayout Spacing="20" Padding="10">
+                            <Image
+                                Source="dotnet_bot.png"
+                                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                                HeightRequest="200"
+                                HorizontalOptions="Center" />
+
+                            <Label
+                                Text="Hello, World!"
+                                SemanticProperties.HeadingLevel="Level1"
+                                FontSize="32"
+                                HorizontalOptions="Center" />
+
+                            <Label
+                                Text="Welcome to .NET Multi-platform App UI"
+                                SemanticProperties.HeadingLevel="Level2"
+                                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                                FontSize="18"
+                                HorizontalOptions="Center" />
+
+                            <Button
+                            Text="Click me"
+                            SemanticProperties.Hint="Counts the number of times you click"
+                            Clicked="OnCounterClicked"
+                            HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </toolkit:Expander.Content>
+
+               </toolkit:Expander>
+            </Border>
+
+            <!--Nested Expander in Down Direction-->
+            <Border Stroke="#2B0B98"
+                    StrokeThickness="4"
+                    StrokeShape="RoundRectangle 40,0,0,40"
+                    Background="#fff"
+                    Padding="16,8"
+                    HorizontalOptions="FillAndExpand">
+
+                <toolkit:Expander Direction="Down">
+                    <toolkit:Expander.Header>
+                          <Button Text="Nested Expand in Down Direction !!" HorizontalOptions="CenterAndExpand"/>
+                    </toolkit:Expander.Header>
+
+                    <toolkit:Expander.Content>
+                        <VerticalStackLayout Spacing="20" Padding="10">
+
+                            <toolkit:Expander Direction="Down">
+                                <toolkit:Expander.Header>
+                                    <Image
+                                        Source="dotnet_bot.png"
+                                        SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                                        HeightRequest="200"
+                                        HorizontalOptions="Center" />
+                               </toolkit:Expander.Header>
+                                <toolkit:Expander.Content>
+                                    <toolkit:Expander Direction="Down">
+                                        <toolkit:Expander.Header>
+                                            <Label
+                                                Text="Hello, World!"
+                                                SemanticProperties.HeadingLevel="Level1"
+                                                FontSize="32"
+                                                HorizontalOptions="Center" />
+                                        </toolkit:Expander.Header>
+                                        <toolkit:Expander.Content>
+                                            <toolkit:Expander Direction="Down">
+                                                <toolkit:Expander.Header>
+                                                    <Label
+                                                        Text="Welcome to .NET Multi-platform App UI"
+                                                        SemanticProperties.HeadingLevel="Level2"
+                                                        SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                                                        FontSize="18"
+                                                        HorizontalOptions="Center" />
+                                                </toolkit:Expander.Header>
+                                                <toolkit:Expander.Content>
+                                                    <Button
+                                                        Text="Click me"
+                                                        SemanticProperties.Hint="Counts the number of times you click"
+                                                        Clicked="OnCounterClicked"
+                                                        HorizontalOptions="Center" />
+                                                </toolkit:Expander.Content>
+                                            </toolkit:Expander>
+                                        </toolkit:Expander.Content>
+                                        
+                                    </toolkit:Expander>
+                                </toolkit:Expander.Content>
+                            </toolkit:Expander>
+
+
+                          
+
+                           
+                        </VerticalStackLayout>
+                    </toolkit:Expander.Content>
+
+               </toolkit:Expander>
+            </Border>
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
+
